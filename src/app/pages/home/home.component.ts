@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,10 +8,25 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  status: string = "";
+
+  ngOnInit() {
+    const token = localStorage.getItem('user');
+
+    if(token){
+      this.status = "Ir para o sistema"
+    } else {
+      this.status = "Login"
+    }
+
+  }
+
   constructor(
     private router: Router
   ) { }
+
   login() {
     this.router.navigate(['login'])
   }

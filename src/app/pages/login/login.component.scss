@@ -15,32 +15,11 @@
         font-weight: 100;
     }
 
-    footer{
+    footer {
         width: 100%;
         text-align: center;
         border-top: 1px solid white;
         padding: 10px 0;
         color: white;
-    }
-
-    .btn-google {
-        padding: 13px 50px;
-        border-radius: 9px;
-        border: none;
-        background-color: #fff;
-        cursor: pointer;
-        font-family: "Lexend", sans-serif;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-
-        &:hover {
-            background-color: #ffffffd3;
-
-        }
-
-        .icon{
-            width: 20px;
-        }
     }
 }

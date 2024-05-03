@@ -6,8 +6,6 @@ import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { Router } from '@angular/router';
 import { UserService } from '../../service/user.service';
 
-
-
 @Component({
     selector: 'app-login',
     standalone: true,
