@@ -1,1 +1,68 @@
-<h1>Dashboard</h1>
+<div class="container">
+  <header>
+    <div class="logo">
+      <a href="/dashboard">Cardapio</a>
+    </div>
+    <nav>
+      <a href="/dashboard">Inicio</a>
+      <a href="/calendario">Calendário</a>
+      <a href="/nutricao">Nutrição</a>
+      <a href="/avaliacao">Avaliação</a>
+    </nav>
+    <div class="user" (click)="toggleDropdown()">
+      <div class="userInform">
+        <img src="{{userProfile.photoUrl}}" alt="img-user">
+        <p>{{userProfile.firstName}}</p>
+      </div>
+
+
+      <div class="dropdown" [ngStyle]="{ 'display': dropdownVisible ? 'block' : 'none' }"
+        (click)="preventClose($event)">
+        <span id="fechar" (click)="closeDropdown()"><i class="fa-solid fa-x"></i></span>
+        <div class="usuario">
+          <img src="{{userProfile.photoUrl}}" alt="img-user">
+          <div class="inform">
+            <p>{{userProfile.name}}</p>
+            <p style="font-size: 12px;">{{userProfile.email}}</p>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="menu">
+          <div class="perfil item">Meu perfil <i class="fa-solid fa-angle-right"></i></div>
+          <div class="config item">Configurações <i class="fa-solid fa-angle-right"></i></div>
+          <div class="ajuda item">Ajuda <i class="fa-solid fa-angle-right"></i></div>
+          <div class="sobre item">Sobre <i class="fa-solid fa-angle-right"></i></div>
+        </div>
+
+        <div class="btn-sair">
+          <button (click)="sair()">Sair</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-mobile" style="display: none;">
+      <a href="/dashboard"><i class="fa-solid fa-house icon"></i></a>
+      <a href="/calendario"><i class="fa-solid fa-calendar icon"></i></a>
+      <a href="/nutricao"><i class="fa-brands fa-nutritionix icon"></i></a>
+      <a href="/avaliacao"><i class="fa-solid fa-star icon"></i></a>
+    </div>
+  </header>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <div *ngIf="userProfile">
+      <p>Nome: {{ userProfile.name }}</p>
+      <p>Email: {{ userProfile.email }}</p>
+      <img src="{{userProfile.photoUrl}}" alt="">
+      
+   -->
