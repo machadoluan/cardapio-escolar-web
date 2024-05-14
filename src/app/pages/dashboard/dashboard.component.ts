@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { CommonModule } from '@angular/common';
 
+import { Router } from '@angular/router';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -13,7 +17,10 @@ export class DashboardComponent implements OnInit {
   userProfile: any;
   dropdownVisible: boolean = false;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     // Obter as informações do perfil do serviço de usuário
@@ -44,5 +51,31 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('user');
     window.location.reload();
 
+  }
+
+
+
+
+
+
+
+
+
+  // Dias da semana 
+
+  segunda() {
+    this.router.navigate(['segunda'])
+  }
+  terca() {
+    this.router.navigate(['terca'])
+  }
+  quarta() {
+    this.router.navigate(['quarta'])
+  }
+  quinta() {
+    this.router.navigate(['quinta'])
+  }
+  sexta() {
+    this.router.navigate(['sexta'])
   }
 }

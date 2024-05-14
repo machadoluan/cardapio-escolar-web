@@ -1,81 +1,31 @@
 <div class="container">
   <div class="background"></div>
-  <header>
-    <div class="logo">
-      <a href="/dashboard">Cardapio</a>
-    </div>
-    <nav>
-      <a href="/dashboard">Inicio</a>
-      <a href="/calendario">Calendário</a>
-      <a href="/nutricao">Nutrição</a>
-      <a href="/avaliacao">Avaliação</a>
-    </nav>
-    <div class="user" (click)="toggleDropdown()">
-      <div class="userInform">
-        <img src="{{userProfile.photoUrl}}" alt="img-user">
-        <p>{{userProfile.firstName}}</p>
-      </div>
 
-
-      <div class="dropdown" [ngStyle]="{ 'display': dropdownVisible ? 'block' : 'none' }"
-        (click)="preventClose($event)">
-        <span id="fechar" (click)="closeDropdown()"><i class="fa-solid fa-x"></i></span>
-        <div class="usuario">
-          <img src="{{userProfile.photoUrl}}" alt="img-user">
-          <div class="inform">
-            <p>{{userProfile.name}}</p>
-            <p style="font-size: 12px;">{{userProfile.email}}</p>
-          </div>
-        </div>
-        <div class="line"></div>
-        <div class="menu">
-          <div class="perfil item">Meu perfil <i class="fa-solid fa-angle-right"></i></div>
-          <div class="config item">Configurações <i class="fa-solid fa-angle-right"></i></div>
-          <div class="ajuda item">Ajuda <i class="fa-solid fa-angle-right"></i></div>
-          <div class="sobre item">Sobre <i class="fa-solid fa-angle-right"></i></div>
-        </div>
-
-        <div class="btn-sair">
-          <button (click)="sair()">Sair</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="header-mobile" style="display: none;">
-      <a href="/dashboard"><i class="fa-solid fa-house icon"></i></a>
-      <a href="/calendario"><i class="fa-solid fa-calendar icon"></i></a>
-      <a href="/nutricao"><i class="fa-brands fa-nutritionix icon"></i></a>
-      <a href="/avaliacao"><i class="fa-solid fa-star icon"></i></a>
-    </div>
-  </header>
+  <app-header></app-header>
 
   <main>
     <div class="container-main">
       <div class="title">
         <h1>Cardápios</h1>
-        <div class="edit">
-          <span>Editar</span>
-          <i class="fa-solid fa-pen-to-square"></i>
-        </div>
       </div>
       <div class="cardapio">
-        <div class="card segunda">
+        <div class="card segunda" (click)="segunda()">
           <span>Segunda-Feira</span>
           <img class="imagem-day" src="../../../assets/segunda.png" alt="">
         </div>
-        <div class="card terca">
+        <div class="card terca" (click)="terca()">
           <span>Terça-Feira</span>
           <img src="../../../assets/terca.png" alt="">
         </div>
-        <div class="card quarta">
+        <div class="card quarta" (click)="quarta()">
           <span>Quarta-Feira</span>
           <img src="../../../assets/quarta.png" alt="">
         </div>
-        <div class="card quinta">
+        <div class="card quinta" (click)="quinta()">
           <span>Quinta-Feira</span>
           <img src="../../../assets/quinta.png" alt="">
         </div>
-        <div class="card sexta">
+        <div class="card sexta" (click)="sexta()">
           <span>Sexta-Feira</span>
           <img src="../../../assets/sexta.png" alt="">
         </div>
@@ -83,9 +33,8 @@
     </div>
   </main>
 
-  <footer>
-    <p>Cardapio escolar - 2024</p>
-  </footer>
+
+  <app-footer></app-footer>
 </div>
 
 
