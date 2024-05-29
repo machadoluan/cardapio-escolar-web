@@ -1,21 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent, ModalComponent],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms', style({ opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class DashboardComponent implements OnInit {
   userProfile: any;
   dropdownVisible: boolean = false;
+
 
   constructor(
     private userService: UserService,
@@ -52,12 +63,6 @@ export class DashboardComponent implements OnInit {
     window.location.reload();
 
   }
-
-
-
-
-
-
 
 
 

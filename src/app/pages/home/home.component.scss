@@ -32,4 +32,16 @@
 
         }
     }
+
+    .button-admin {
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        font-family: "Lexend", sans-serif;
+
+        &:hover {
+            background-color: #ffffffd3;
+
+        }
+    }
 }

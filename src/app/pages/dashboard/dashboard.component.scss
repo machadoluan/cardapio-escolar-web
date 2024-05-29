@@ -1,4 +1,39 @@
 .container {
+
+    .painel-admin {
+        position: fixed;
+        bottom: 70px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: #DD9200;
+        display: grid;
+        place-content: center;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        span {
+            display: none;
+            transition: display 3s ease-in-out;
+        }
+
+        &:hover {
+            width: 120px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        &:hover span {
+            display: block;
+            font-size: 14px;
+        }
+    }
+
     // Main
     .container-main {
         width: 800px;
